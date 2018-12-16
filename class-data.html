@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>KeepFit</title>
     <link href="style/default.css" rel="stylesheet" type="text/css"/>
+    <script src="scripts/keepfit.js"></script>
     <script src="scripts/cookies.js"></script>
     <script src="scripts/utils.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,6 +75,10 @@
                 height: 450,
                 bar: {groupWidth: "95%"},
                 legend: { position: "none" },
+                animation: {
+                    duration: 1500,
+                    startup: true //This is the new option
+                }
             };
             var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
             chart.draw(view, options);
@@ -85,9 +90,9 @@
     <img class="logo" src="images/KeepFitLogo.png">
     <div class="topnav-right">
         <a style="text-align: center;">
-            <a href="index.html"><img src="images/home.png" alt="Home" class="center">Home</a>
-            <a class="active" href="index.html"><img src="images/account.png" alt="Account" class="center">Account</a>
-            <a href="#"><img src="images/exit.png" alt="Log-Out" class="center">Logout</a>
+            <a class="active" href="action.html"><img src="images/home.png" alt="Home" class="center">Home</a>
+            <a href="selection.html"><img src="images/account.png" alt="Account" class="center">Account</a>
+            <a href="index.html" onclick="logout()"><img src="images/exit.png" alt="Log-Out" class="center">Logout</a>
         </a>
     </div>
 </div>
@@ -102,9 +107,9 @@
 
 <div id="columnchart_values" style="display: inline; width: 1100px; height: 300px; position: fixed; bottom: 30%; left: -5%;"></div>
 <div id="chart_div" style="display: inline; width: 1100px; height: 300px; position: fixed; bottom: 20%; left: 65%;"></div>
-<a href="privacy.html" class="button" style="font-size: 100%; position: fixed; bottom: 5%; left: 5%; padding: 5px 50px;">Back</a>
-<a href="privacy.html" class="button" style="font-size: 100%; position: fixed; bottom: 5%; left: 20%; padding: 5px 20px;">See individuals</a>
-<a href="privacy.html" class="button" style="font-size: 100%; position: fixed; bottom: 5%; left: 40%; padding: 5px 20px;">Set Objectives</a>
+<a href="action.html" class="button" style="font-size: 100%; position: fixed; bottom: 5%; left: 5%; padding: 5px 50px;">Back</a>
+<a href="class-data-individual.html" class="button" style="font-size: 100%; position: fixed; bottom: 5%; left: 20%; padding: 5px 20px;">See individuals</a>
+<a onclick = "setObjective()" class="button" style="font-size: 100%; position: fixed; bottom: 5%; left: 40%; padding: 5px 20px;">Set Objectives</a>
 
 <div class="main_container">
     <hr class = "hr">

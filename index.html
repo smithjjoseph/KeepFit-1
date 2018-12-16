@@ -5,22 +5,9 @@
     <title>Keep Fit</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="style/login.css" rel="stylesheet" type="text/css"/>
-    <script>
-        function login() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            if (!username) {
-                // this can be used to access a database and login properly however as this is a prototype this is sufficient.
-                alert("Please input a username!");
-            }
-
-            document.cookie = "username=" + username;
-            return false;
-        }
-    </script>
+    <script src="scripts/keepfit.js"></script>
 </head>
-<body>
+<body onload="checkLoginOrRedirect();">
 <div class="white-bar"><br><br><br><br><br></div>
 <div class="main_container">
     <img src="images/KeepFitLogo.png" alt="Keep Fit">

@@ -66,6 +66,10 @@ h2 {
     float: right;
 }
 
+.topnav-right a {
+    font-family: "Lato-Thin";
+}
+
 .logo {
     width: 201px;
     height: auto;
